@@ -1,0 +1,24 @@
+{
+  "$schema": "https://deckx.app/schemas/clock-face.schema.json",
+  "id": "com.deckx.sample.clockface",
+  "name": "Sample Standby Clock & Weather",
+  "author": "DeckX Developer Community",
+  "version": "1.0.0",
+  "description": "Standalone clock & weather standby face implemented as a single C# DLL plugin with integrated Settings UI window.",
+  "assembly": "DeckX.ClockFace.SampleTemplate.dll",
+  "preview": "preview.png",
+  "settings": true,
+  "layout": "custom",
+  "targetDevice": "DX8K",
+  "resolution": {
+    "width": 800,
+    "height": 480
+  },
+  "tags": [
+    "clock",
+    "weather",
+    "plugin",
+    "dll",
+    "standby"
+  ]
+}

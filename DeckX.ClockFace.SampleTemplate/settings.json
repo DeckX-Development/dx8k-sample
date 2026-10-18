@@ -1,0 +1,9 @@
+{
+  "city": "Colombo",
+  "apiKey": "",
+  "temperatureUnit": "C",
+  "clockFormat": "24h",
+  "showSeconds": true,
+  "accentColor": "#00FFCC",
+  "refreshIntervalMinutes": 15
+}

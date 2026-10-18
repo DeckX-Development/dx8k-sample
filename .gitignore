@@ -1,0 +1,24 @@
+## Build and output directories
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Dd]ist/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Visual Studio / VS Code / JetBrains
+.vs/
+.vscode/
+.idea/
+*.rsuser
+
+## OS Files
+.DS_Store
+Thumbs.db
+
+## Plugin Build Staging
+**/staging/

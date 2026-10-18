@@ -1,0 +1,73 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <NoWarn>$(NoWarn);MSB3277</NoWarn>
+  </PropertyGroup>
+
+  <!-- Reference DeckX.Core from solution if available, or fallback to official NuGet package for standalone development -->
+  <ItemGroup Condition="Exists('..\..\DeckX.Core\DeckX.Core.csproj')">
+    <ProjectReference Include="..\..\DeckX.Core\DeckX.Core.csproj">
+      <Private>false</Private>
+      <ExcludeAssets>runtime</ExcludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="!Exists('..\..\DeckX.Core\DeckX.Core.csproj')">
+    <PackageReference Include="DeckX.Core" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SkiaSharp" Version="2.88.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssetFiles Include="assets\**\*.*" Condition="Exists('assets')" />
+  </ItemGroup>
+
+  <!-- Auto-Package into .deckxplugin automatically on every Build in Visual Studio / dotnet build -->
+  <Target Name="AutoPackageDeckXPlugin" AfterTargets="Build">
+    <PropertyGroup>
+      <StagingDir>$(ProjectDir)bin\staging\</StagingDir>
+      <OutputDir Condition="Exists('$(ProjectDir)..\..\releases\')">$(ProjectDir)..\..\releases\</OutputDir>
+      <OutputDir Condition="!Exists('$(ProjectDir)..\..\releases\')">$(ProjectDir)releases\</OutputDir>
+      <PackageOutputFile>$(OutputDir)DeckX.Plugin.CanvasSampleTemplate.deckxplugin</PackageOutputFile>
+      <AppDataPluginDir>$(AppData)\DeckX\Plugins\com.deckx.canvas.sampletemplate\</AppDataPluginDir>
+    </PropertyGroup>
+
+    <Message Importance="high" Text="=== [DeckX Auto-Packer] Packaging DeckX.Plugin.CanvasSampleTemplate.deckxplugin... ===" />
+
+    <!-- 1. Clean staging directory -->
+    <RemoveDir Directories="$(StagingDir)" />
+    <MakeDir Directories="$(StagingDir)" />
+
+    <!-- 2. Copy plugin.json and binary DLL -->
+    <Copy SourceFiles="$(ProjectDir)plugin.json" DestinationFolder="$(StagingDir)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(StagingDir)" />
+    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(StagingDir)" Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+
+    <!-- 3. Copy assets folder if present -->
+    <Copy SourceFiles="@(AssetFiles)" DestinationFiles="@(AssetFiles->'$(StagingDir)assets\%(RecursiveDir)%(Filename)%(Extension)')" Condition="Exists('assets')" />
+
+    <!-- 4. Zip staging to .deckxplugin -->
+    <MakeDir Directories="$(OutputDir)" />
+    <Delete Files="$(PackageOutputFile)" Condition="Exists('$(PackageOutputFile)')" />
+    <ZipDirectory SourceDirectory="$(StagingDir)" DestinationFile="$(PackageOutputFile)" Overwrite="true" />
+
+    <!-- 5. Also copy into %APPDATA%\DeckX\Plugins\com.deckx.canvas.sampletemplate for instant local testing -->
+    <MakeDir Directories="$(AppDataPluginDir)" />
+    <Copy SourceFiles="$(ProjectDir)plugin.json" DestinationFolder="$(AppDataPluginDir)" ContinueOnError="true" Retries="0" RetryDelayMilliseconds="0" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(AppDataPluginDir)" ContinueOnError="true" Retries="0" RetryDelayMilliseconds="0" />
+    <Copy SourceFiles="@(AssetFiles)" DestinationFiles="@(AssetFiles->'$(AppDataPluginDir)assets\%(RecursiveDir)%(Filename)%(Extension)')" Condition="Exists('assets')" ContinueOnError="true" Retries="0" RetryDelayMilliseconds="0" />
+
+    <Message Importance="high" Text="=== [DeckX Auto-Packer] SUCCESS: Created $(PackageOutputFile) ===" />
+  </Target>
+
+</Project>

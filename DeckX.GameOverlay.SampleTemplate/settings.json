@@ -1,0 +1,19 @@
+{
+  "themePreset": "cyberpunk_neon",
+  "hudTitle": "CYBERPUNK TELEMETRY HUD",
+  "backgroundColor": "#0A0B10",
+  "cardBackground": "#10131D",
+  "cardBorder": "#23293B",
+  "accentColor": "#00F0FF",
+  "secondaryColor": "#3B82F6",
+  "textPrimary": "#FFFFFF",
+  "textMuted": "#8E9BAE",
+  "customCpuName": "",
+  "customGpuName": "",
+  "tempUnit": "C",
+  "showFps": true,
+  "showCpu": true,
+  "showGpu": true,
+  "showRam": true,
+  "showVram": true
+}

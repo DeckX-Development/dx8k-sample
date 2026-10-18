@@ -1,0 +1,183 @@
+{
+  "id": "com.deckx.sampletemplate",
+  "name": "DeckX Button Plugin Template",
+  "version": "1.0.0",
+  "author": "DeckX Developer",
+  "description": "A clean, reference-grade sample template for creating custom C# button plugins with live two-way updates, animations, and hardware LCD synchronization.",
+  "category": "Sample Template (Plugin)",
+  "targetDevice": "DX8K",
+  "supportedDevices": [ "DX8K" ],
+  "assembly": "DeckX.Plugin.SampleTemplate.dll",
+  "actions": [
+    {
+      "id": "sample.toggle_power",
+      "title": "Sample: Power Toggle",
+      "description": "Toggles an ON/OFF state with dynamic color, title, and border synchronization."
+    },
+    {
+      "id": "sample.live_counter",
+      "title": "Sample: Tap Counter",
+      "description": "Counts taps and updates the button label in real-time."
+    },
+    {
+      "id": "sample.color_cycle",
+      "title": "Sample: Color Cycler",
+      "description": "Cycles through vibrant button colors on every press."
+    },
+    {
+      "id": "sample.live_clock",
+      "title": "Sample: Live Clock Ticker",
+      "description": "Demonstrates 1-second live telemetry updates directly on the hardware button."
+    },
+    {
+      "id": "sample.open_url",
+      "title": "Sample: Open Web Link",
+      "description": "Opens a web link in the default browser asynchronously without freezing the UI."
+    },
+    {
+      "id": "sample.hotkey_macro",
+      "title": "Sample: Hotkey Macro",
+      "description": "Simulates a keyboard shortcut sequence safely in the background."
+    },
+    {
+      "id": "sample.reset_state",
+      "title": "Sample: Reset All",
+      "description": "Resets all sample button states back to default."
+    },
+    {
+      "id": "sample.status_badge",
+      "title": "Sample: Status Badge",
+      "description": "Displays live system/plugin status on the physical deck."
+    }
+  ],
+  "defaultPage": {
+    "pageNumber": 1,
+    "hasCustomButtonTextColor": true,
+    "buttonTextColorHex": "#FFFFFF",
+    "hasButtonBorder": true,
+    "buttonBorderColorHex": "#FFFFFF",
+    "buttonBorderWidth": 1.5,
+    "keys": [
+      {
+        "index": 1,
+        "title": "STATE: ON",
+        "actionType": "Plugin: Power Toggle",
+        "pluginActionId": "sample.toggle_power",
+        "pluginId": "com.deckx.sampletemplate",
+        "hasAction": true,
+        "showTitle": true,
+        "iconSize": 50,
+        "useCustomColor": true,
+        "customColorHex": "#10B981",
+        "hasCustomBorder": true,
+        "customBorderColorHex": "#FFFFFF",
+        "customBorderWidth": 1.5
+      },
+      {
+        "index": 2,
+        "title": "CLICKS: 0",
+        "actionType": "Plugin: Tap Counter",
+        "pluginActionId": "sample.live_counter",
+        "pluginId": "com.deckx.sampletemplate",
+        "hasAction": true,
+        "showTitle": true,
+        "iconSize": 50,
+        "useCustomColor": true,
+        "customColorHex": "#3B82F6",
+        "hasCustomBorder": true,
+        "customBorderColorHex": "#FFFFFF",
+        "customBorderWidth": 1.5
+      },
+      {
+        "index": 3,
+        "title": "COLOR CYCLE",
+        "actionType": "Plugin: Color Cycler",
+        "pluginActionId": "sample.color_cycle",
+        "pluginId": "com.deckx.sampletemplate",
+        "hasAction": true,
+        "showTitle": true,
+        "iconSize": 50,
+        "useCustomColor": true,
+        "customColorHex": "#8B5CF6",
+        "hasCustomBorder": true,
+        "customBorderColorHex": "#FFFFFF",
+        "customBorderWidth": 1.5
+      },
+      {
+        "index": 4,
+        "title": "00:00:00",
+        "actionType": "Plugin: Live Clock",
+        "pluginActionId": "sample.live_clock",
+        "pluginId": "com.deckx.sampletemplate",
+        "hasAction": true,
+        "showTitle": true,
+        "iconSize": 50,
+        "useCustomColor": true,
+        "customColorHex": "#06B6D4",
+        "hasCustomBorder": true,
+        "customBorderColorHex": "#FFFFFF",
+        "customBorderWidth": 1.5
+      },
+      {
+        "index": 5,
+        "title": "WEBSITE",
+        "actionType": "Plugin: Open Web Link",
+        "pluginActionId": "sample.open_url",
+        "pluginId": "com.deckx.sampletemplate",
+        "hasAction": true,
+        "showTitle": true,
+        "iconSize": 50,
+        "useCustomColor": true,
+        "customColorHex": "#F59E0B",
+        "hasCustomBorder": true,
+        "customBorderColorHex": "#FFFFFF",
+        "customBorderWidth": 1.5
+      },
+      {
+        "index": 6,
+        "title": "HOTKEY",
+        "actionType": "Plugin: Hotkey Macro",
+        "pluginActionId": "sample.hotkey_macro",
+        "pluginId": "com.deckx.sampletemplate",
+        "hasAction": true,
+        "showTitle": true,
+        "iconSize": 50,
+        "useCustomColor": true,
+        "customColorHex": "#EC4899",
+        "hasCustomBorder": true,
+        "customBorderColorHex": "#FFFFFF",
+        "customBorderWidth": 1.5
+      },
+      {
+        "index": 7,
+        "title": "RESET ALL",
+        "actionType": "Plugin: Reset All",
+        "pluginActionId": "sample.reset_state",
+        "pluginId": "com.deckx.sampletemplate",
+        "hasAction": true,
+        "showTitle": true,
+        "iconSize": 50,
+        "useCustomColor": true,
+        "customColorHex": "#EF4444",
+        "hasCustomBorder": true,
+        "customBorderColorHex": "#FFFFFF",
+        "customBorderWidth": 1.5
+      },
+      {
+        "index": 8,
+        "title": "STATUS: READY",
+        "actionType": "Plugin: Status Badge",
+        "pluginActionId": "sample.status_badge",
+        "pluginId": "com.deckx.sampletemplate",
+        "hasAction": true,
+        "showTitle": true,
+        "iconSize": 50,
+        "useCustomColor": true,
+        "customColorHex": "#1F2937",
+        "hasCustomBorder": true,
+        "customBorderColorHex": "#FFFFFF",
+        "customBorderWidth": 1.5
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <NoWarn>$(NoWarn);MSB3277</NoWarn>
+  </PropertyGroup>
+
+  <!-- Reference DeckX.Core from solution if available, or fallback to official NuGet package for standalone development -->
+  <ItemGroup Condition="Exists('..\..\DeckX.Core\DeckX.Core.csproj')">
+    <ProjectReference Include="..\..\DeckX.Core\DeckX.Core.csproj">
+      <Private>false</Private>
+      <ExcludeAssets>runtime</ExcludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="!Exists('..\..\DeckX.Core\DeckX.Core.csproj')">
+    <PackageReference Include="DeckX.Core" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssetFiles Include="assets\**\*.*" Condition="Exists('assets')" />
+  </ItemGroup>
+
+  <!-- Auto-Package into .deckxclock automatically on every Build / VS Code run -->
+  <Target Name="AutoPackageDeckXClock" AfterTargets="Build">
+    <PropertyGroup>
+      <StagingDir>$(ProjectDir)bin\staging\</StagingDir>
+      <OutputDir Condition="Exists('$(ProjectDir)..\..\releases\')">$(ProjectDir)..\..\releases\</OutputDir>
+      <OutputDir Condition="!Exists('$(ProjectDir)..\..\releases\')">$(ProjectDir)releases\</OutputDir>
+      <PackageOutputFile>$(OutputDir)SampleClockFace.deckxclock</PackageOutputFile>
+      <AppDataClockDir>$(AppData)\DeckX\devices\control_pad\dx8k\screensaver\clock_faces\com.deckx.sample.clockface\</AppDataClockDir>
+    </PropertyGroup>
+
+    <Message Importance="high" Text="=== [DeckX Auto-Packer] Packaging SampleClockFace.deckxclock DLL... ===" />
+
+    <!-- 1. Clean staging directory -->
+    <RemoveDir Directories="$(StagingDir)" />
+    <MakeDir Directories="$(StagingDir)" />
+
+    <!-- 2. Copy manifest, binary DLL, pdb, settings, and preview -->
+    <Copy SourceFiles="$(ProjectDir)clock.json" DestinationFolder="$(StagingDir)" Condition="Exists('$(ProjectDir)clock.json')" />
+    <Copy SourceFiles="$(ProjectDir)settings.json" DestinationFolder="$(StagingDir)" Condition="Exists('$(ProjectDir)settings.json')" />
+    <Copy SourceFiles="$(ProjectDir)preview.png" DestinationFolder="$(StagingDir)" Condition="Exists('$(ProjectDir)preview.png')" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(StagingDir)" />
+    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(StagingDir)" Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+
+    <!-- 3. Copy assets folder if present -->
+    <Copy SourceFiles="@(AssetFiles)" DestinationFiles="@(AssetFiles->'$(StagingDir)assets\%(RecursiveDir)%(Filename)%(Extension)')" Condition="Exists('assets')" />
+
+    <!-- 4. Zip staging to .deckxclock -->
+    <MakeDir Directories="$(OutputDir)" />
+    <Delete Files="$(PackageOutputFile)" Condition="Exists('$(PackageOutputFile)')" />
+    <ZipDirectory SourceDirectory="$(StagingDir)" DestinationFile="$(PackageOutputFile)" Overwrite="true" />
+
+    <!-- 5. Deploy directly into DeckX AppData for 1-click live testing -->
+    <MakeDir Directories="$(AppDataClockDir)" />
+    <Copy SourceFiles="$(ProjectDir)clock.json" DestinationFolder="$(AppDataClockDir)" ContinueOnError="true" Retries="0" RetryDelayMilliseconds="0" />
+    <Copy SourceFiles="$(ProjectDir)settings.json" DestinationFolder="$(AppDataClockDir)" ContinueOnError="true" Retries="0" RetryDelayMilliseconds="0" />
+    <Copy SourceFiles="$(ProjectDir)preview.png" DestinationFolder="$(AppDataClockDir)" ContinueOnError="true" Retries="0" RetryDelayMilliseconds="0" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(AppDataClockDir)" ContinueOnError="true" Retries="0" RetryDelayMilliseconds="0" />
+    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(AppDataClockDir)" Condition="Exists('$(TargetDir)$(TargetName).pdb')" ContinueOnError="true" Retries="0" RetryDelayMilliseconds="0" />
+
+    <Message Importance="high" Text="=== [DeckX Auto-Packer] SUCCESS: Created $(PackageOutputFile) &amp; Deployed to DeckX Studio! ===" />
+  </Target>
+
+</Project>
