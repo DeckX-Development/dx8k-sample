@@ -10,10 +10,10 @@ This repository contains ready-to-use template projects and developer guides for
 
 | Template | Type | Description |
 | :--- | :--- | :--- |
-| [**DeckX.Plugin.SampleTemplate**](./DeckX.Plugin.SampleTemplate) | 🔲 **Button Plugin** | 8-Key hardware button plugin template demonstrating dynamic button actions, two-way state toggles, click counters, custom borders, and live telemetry tickers. |
-| [**DeckX.Plugin.CanvasSampleTemplate**](./DeckX.Plugin.CanvasSampleTemplate) | 🎨 **Canvas Plugin** | Full-canvas (480x272) rendering plugin template for rich custom UI, graphics, and capacitive touch controls. |
-| [**DeckX.ClockFace.SampleTemplate**](./DeckX.ClockFace.SampleTemplate) | ⏰ **Clock Face** | Custom standby/active digital & analog clock face template for DeckX. |
-| [**DeckX.GameOverlay.SampleTemplate**](./DeckX.GameOverlay.SampleTemplate) | 🎮 **Game Overlay** | Full-screen in-game monitoring and hardware telemetry HUD overlay template. |
+| [**DeckX.Plugin.SampleTemplate**](./DX8K-Sample-Windows/DeckX.Plugin.SampleTemplate) | 🔲 **Button Plugin** | 8-Key hardware button plugin template demonstrating dynamic button actions, two-way state toggles, click counters, custom borders, and live telemetry tickers. |
+| [**DeckX.Plugin.CanvasSampleTemplate**](./DX8K-Sample-Windows/DeckX.Plugin.CanvasSampleTemplate) | 🎨 **Canvas Plugin** | Full-canvas (480x272) rendering plugin template for rich custom UI, graphics, and capacitive touch controls. |
+| [**DeckX.ClockFace.SampleTemplate**](./DX8K-Sample-Windows/DeckX.ClockFace.SampleTemplate) | ⏰ **Clock Face** | Custom standby/active digital & analog clock face template for DeckX. |
+| [**DeckX.GameOverlay.SampleTemplate**](./DX8K-Sample-Windows/DeckX.GameOverlay.SampleTemplate) | 🎮 **Game Overlay** | Full-screen in-game monitoring and hardware telemetry HUD overlay template. |
 
 ---
 
@@ -31,8 +31,8 @@ This repository contains ready-to-use template projects and developer guides for
    ```bash
    git clone https://github.com/DeckX-Development/dx8k-sample.git
    ```
-2. Navigate to the desired template folder:
+2. Navigate to the desired template folder inside `DX8K-Sample-Windows`:
    ```bash
-   cd DeckX.Plugin.SampleTemplate
+   cd dx8k-sample/DX8K-Sample-Windows/DeckX.Plugin.SampleTemplate
    ```
 3. Check the template's `README.md` and included PDF developer guide for detailed build and setup instructions.
