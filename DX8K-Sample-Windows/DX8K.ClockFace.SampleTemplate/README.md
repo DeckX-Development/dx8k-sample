@@ -4,6 +4,9 @@ Welcome to the official developer starter kit for creating custom **DeckX Standb
 
 Just like DeckX Plugins (`IDeckXPlugin`), this template is a **single C# project** that implements `IDeckXClockFace` and bundles its own integrated Settings Window.
 
+> 📖 **Looking for a deep-dive architecture, SkiaSharp standby rendering, and settings dialog breakdown?**  
+> Check out the [**Comprehensive Developer Guide (DEVELOPER_GUIDE.md)**](./DEVELOPER_GUIDE.md).
+
 ---
 
 ## ⚡ The 1-Step Build Workflow in VS Code
