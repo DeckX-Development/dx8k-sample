@@ -8,12 +8,12 @@ This repository contains ready-to-use template projects and developer guides for
 
 ## 📦 Included Templates
 
-| Template | Type | Description |
-| :--- | :--- | :--- |
-| [**DX8K.Plugin.SampleTemplate**](./DX8K-Sample-Windows/DX8K.Plugin.SampleTemplate) | 🔲 **Button Plugin** | 8-Key hardware button plugin template demonstrating dynamic button actions, two-way state toggles, click counters, custom borders, and live telemetry tickers. |
-| [**DX8K.Plugin.CanvasSampleTemplate**](./DX8K-Sample-Windows/DX8K.Plugin.CanvasSampleTemplate) | 🎨 **Canvas Plugin** | Full-canvas (480x272) rendering plugin template for rich custom UI, graphics, and capacitive touch controls. |
-| [**DX8K.ClockFace.SampleTemplate**](./DX8K-Sample-Windows/DX8K.ClockFace.SampleTemplate) | ⏰ **Clock Face** | Custom standby/active digital & analog clock face template for DeckX. |
-| [**DX8K.GameOverlay.SampleTemplate**](./DX8K-Sample-Windows/DX8K.GameOverlay.SampleTemplate) | 🎮 **Game Overlay** | Full-screen in-game monitoring and hardware telemetry HUD overlay template. |
+| Template | Type | Description | Deep Dive Guide |
+| :--- | :--- | :--- | :--- |
+| [**DX8K.Plugin.SampleTemplate**](./DX8K-Sample-Windows/DX8K.Plugin.SampleTemplate) | 🔲 **Button Plugin** | 8-Key hardware button plugin template demonstrating dynamic button actions, two-way state toggles, click counters, custom borders, and live telemetry tickers. | [Developer Guide](./DX8K-Sample-Windows/DX8K.Plugin.SampleTemplate/DEVELOPER_GUIDE.md) |
+| [**DX8K.Plugin.CanvasSampleTemplate**](./DX8K-Sample-Windows/DX8K.Plugin.CanvasSampleTemplate) | 🎨 **Canvas Plugin** | Full-canvas (480x272) rendering plugin template for rich custom UI, graphics, and capacitive touch controls. | [Developer Guide](./DX8K-Sample-Windows/DX8K.Plugin.CanvasSampleTemplate/DEVELOPER_GUIDE.md) |
+| [**DX8K.ClockFace.SampleTemplate**](./DX8K-Sample-Windows/DX8K.ClockFace.SampleTemplate) | ⏰ **Clock Face** | Custom standby/active digital & analog clock face template for DeckX. | [Developer Guide](./DX8K-Sample-Windows/DX8K.ClockFace.SampleTemplate/DEVELOPER_GUIDE.md) |
+| [**DX8K.GameOverlay.SampleTemplate**](./DX8K-Sample-Windows/DX8K.GameOverlay.SampleTemplate) | 🎮 **Game Overlay** | Full-screen in-game monitoring and hardware telemetry HUD overlay template. | [Developer Guide](./DX8K-Sample-Windows/DX8K.GameOverlay.SampleTemplate/DEVELOPER_GUIDE.md) |
 
 ---
 
@@ -35,4 +35,4 @@ This repository contains ready-to-use template projects and developer guides for
    ```bash
    cd dx8k-sample/DX8K-Sample-Windows/DX8K.Plugin.SampleTemplate
    ```
-3. Check the template's `README.md` and included PDF developer guide for detailed build and setup instructions.
+3. Check the template's `README.md` and included `DEVELOPER_GUIDE.md` for detailed build and setup instructions.

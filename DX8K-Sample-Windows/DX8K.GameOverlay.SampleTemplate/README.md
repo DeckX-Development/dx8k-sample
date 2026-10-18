@@ -2,6 +2,9 @@
 
 Welcome to the **DeckX Game Overlay & Telemetry HUD Plugin Template**. This single-project C# template allows developers to create custom hardware monitoring HUDs, cyberpunk gaming overlays, and thermal telemetry dashboards for the **DeckX Control Pad (DX8K)** and desktop overlay.
 
+> 📖 **Looking for an in-depth architecture breakdown, telemetry pipelines, SkiaSharp HUD drawing tips, and STA thread settings guide?**  
+> Check out the [**Comprehensive Developer Guide (DEVELOPER_GUIDE.md)**](./DEVELOPER_GUIDE.md).
+
 ---
 
 ## 🚀 Key Features
