@@ -5,7 +5,7 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Windows.Forms;
 
-namespace DeckX.ClockFace.SampleTemplate;
+namespace DX8K.ClockFace.SampleTemplate;
 
 /// <summary>
 /// Dark-Themed Settings Window for the clock face plugin.

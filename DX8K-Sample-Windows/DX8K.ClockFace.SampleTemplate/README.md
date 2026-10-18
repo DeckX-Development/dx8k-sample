@@ -17,17 +17,17 @@ dotnet build -c Release
 *(or press `Ctrl + Shift + B` in VS Code)*
 
 ### What happens automatically in one go:
-1. **Compiles:** Your C# code compiles into `DeckX.ClockFace.SampleTemplate.dll`.
-2. **Packages:** Bundles `clock.json`, `settings.json`, `preview.png`, and your DLL into `SampleClockFace.deckxclock`.
-3. **Deploys:** Automatically installs the package directly into `%APPDATA%\DeckX\DX8K\screensaver\clock_faces\com.deckx.sample.clockface\`!
+1. **Compiles:** Your C# code compiles into `DX8K.ClockFace.SampleTemplate.dll`.
+2. **Packages:** Bundles `clock.json`, `settings.json`, `preview.png`, and your DLL into `DX8K.ClockFace.SampleTemplate.deckxclock`.
+3. **Deploys:** Automatically installs the package directly into `%APPDATA%\DeckX\DX8K\screensaver\clock_faces\com.dx8k.sample.clockface\`!
 
 ---
 
 ## 📁 File Structure
 
 ```text
-DeckX.ClockFace.SampleTemplate/
-├── DeckX.ClockFace.SampleTemplate.csproj  # Single C# project file with integrated auto-packer
+DX8K.ClockFace.SampleTemplate/
+├── DX8K.ClockFace.SampleTemplate.csproj   # Single C# project file with integrated auto-packer
 ├── SampleClockFace.cs                    # Main class implementing IDeckXClockFace
 ├── SettingsWindow.cs                     # Integrated Dark Settings Window UI
 ├── clock.json                            # Manifest (specifies assembly DLL & settings: true)
@@ -48,7 +48,7 @@ public class SampleClockFace : IDeckXClockFace
 {
     private string _packageDirectory = string.Empty;
 
-    public string Id => "com.deckx.sample.clockface";
+    public string Id => "com.dx8k.sample.clockface";
     public string Name => "Sample Standby Clock & Weather";
     public bool HasSettings => true;
 

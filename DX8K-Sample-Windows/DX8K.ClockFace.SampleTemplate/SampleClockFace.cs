@@ -4,7 +4,7 @@ using System.Threading;
 using DeckX.Core.Plugins;
 using SkiaSharp;
 
-namespace DeckX.ClockFace.SampleTemplate;
+namespace DX8K.ClockFace.SampleTemplate;
 
 /// <summary>
 /// Sample Standby Clock & Weather Face DLL Plugin.
@@ -20,7 +20,7 @@ public class SampleClockFace : IDeckXClockFace
     private string _cachedAccentColor = "#00FFCC";
     private DateTime _lastSettingsCheck = DateTime.MinValue;
 
-    public string Id => "com.deckx.sample.clockface";
+    public string Id => "com.dx8k.sample.clockface";
     public string Name => "Sample Standby Clock & Weather";
     public string Author => "DeckX Developer Community";
     public string Version => "1.0.0";

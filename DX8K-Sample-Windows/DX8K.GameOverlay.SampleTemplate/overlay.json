@@ -1,11 +1,11 @@
 {
   "$schema": "https://deckx.app/schemas/game-overlay.schema.json",
-  "id": "com.deckx.sample.gameoverlay",
+  "id": "com.dx8k.sample.gameoverlay",
   "name": "Cyber Neon Telemetry HUD",
   "author": "DeckX Developer Community",
   "version": "1.0.0",
   "description": "High-performance gaming & hardware telemetry HUD plugin with real-time FPS, CPU/GPU thermal metrics, and integrated settings dialog.",
-  "assembly": "DeckX.GameOverlay.SampleTemplate.dll",
+  "assembly": "DX8K.GameOverlay.SampleTemplate.dll",
   "preview": "preview.png",
   "settings": true,
   "layout": "custom",

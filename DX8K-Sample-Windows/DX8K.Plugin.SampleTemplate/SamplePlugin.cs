@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DeckX.Core.Models;
 using DeckX.Core.Plugins;
 
-namespace DeckX.Plugin.SampleTemplate;
+namespace DX8K.Plugin.SampleTemplate;
 
 /// <summary>
 /// Reference-grade sample button plugin for DeckX Control Studio.
@@ -40,8 +40,8 @@ public class SamplePlugin : IDeckXPlugin
     // 2. Plugin Identification & Metadata
     // Must match the ID and Category in plugin.json
     // =========================================================================
-    public string Id => "com.deckx.sampletemplate";
-    public string Name => "DeckX Button Plugin Template";
+    public string Id => "com.dx8k.sampletemplate";
+    public string Name => "DX8K Button Plugin Template";
     public string Description => "Sample reference template for creating customizable button plugins for DeckX Control Studio.";
     public string Version => "1.0.0";
     public string Author => "DeckX Developer";

@@ -6,7 +6,7 @@ using DeckX.Core.Models;
 using DeckX.Core.Plugins;
 using SkiaSharp;
 
-namespace DeckX.GameOverlay.SampleTemplate;
+namespace DX8K.GameOverlay.SampleTemplate;
 
 /// <summary>
 /// Sample Game Monitoring & Telemetry HUD DLL Plugin.
@@ -34,7 +34,7 @@ public class SampleGameOverlay : IDeckXGameOverlay
     private bool _cachedShowVram = true;
     private DateTime _lastSettingsCheck = DateTime.MinValue;
 
-    public string Id => "com.deckx.sample.gameoverlay";
+    public string Id => "com.dx8k.sample.gameoverlay";
     public string Name => "Cyber Neon Telemetry HUD";
     public string Author => "DeckX Developer Community";
     public string Version => "1.0.0";

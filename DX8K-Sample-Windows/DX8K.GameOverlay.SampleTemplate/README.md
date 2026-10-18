@@ -7,7 +7,7 @@ Welcome to the **DeckX Game Overlay & Telemetry HUD Plugin Template**. This sing
 ## 🚀 Key Features
 
 - **Single C# Project**: No scripts or complex batch files required. Build directly with `dotnet build` or inside Visual Studio / VS Code.
-- **Auto-Packaging**: Every build automatically compiles your DLL, bundles assets and `overlay.json`, zips into `releases/SampleGameOverlay.deckxoverlay`, and deploys directly to DeckX Studio for instant live testing.
+- **Auto-Packaging**: Every build automatically compiles your DLL, bundles assets and `overlay.json`, zips into `releases/DX8K.GameOverlay.SampleTemplate.deckxoverlay`, and deploys directly to DeckX Studio for instant live testing.
 - **Integrated Settings Window (`HasSettings`)**: Implements `OpenSettings()` directly in the DLL using a dark WinForms dialog to adjust titles, colors, sensor units, and visible telemetry.
 - **SkiaSharp 480x272 Canvas**: High-performance 2D hardware-accelerated rendering matching the exact IPS aspect ratio of DeckX Control Pad.
 - **Hardware Telemetry Context**: `RenderOverlay` receives real-time FPS, CPU load/temp/clock/fan, GPU load/temp/clock/fan, and RAM/VRAM usage.
@@ -17,7 +17,7 @@ Welcome to the **DeckX Game Overlay & Telemetry HUD Plugin Template**. This sing
 ## 📁 Project Structure
 
 ```
-DeckX.GameOverlay.SampleTemplate/
+DX8K.GameOverlay.SampleTemplate/
 │
 ├── overlay.json               # Package manifest (ID, name, author, version, entry assembly)
 ├── settings.json              # Default user configuration values
@@ -42,7 +42,7 @@ dotnet build -c Release
 Press `Ctrl + Shift + B` or click **Build Solution**.
 
 Upon build completion:
-1. `releases/SampleGameOverlay.deckxoverlay` is generated.
+1. `releases/DX8K.GameOverlay.SampleTemplate.deckxoverlay` is generated.
 2. The package is automatically deployed to:
    - `%APPDATA%\DeckX\devices\control_pad\dx8k\game_overlays\`
    - `%APPDATA%\DeckX\DX8K\game_overlays\`

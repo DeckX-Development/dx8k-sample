@@ -5,7 +5,7 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Windows.Forms;
 
-namespace DeckX.GameOverlay.SampleTemplate;
+namespace DX8K.GameOverlay.SampleTemplate;
 
 /// <summary>
 /// Dark-Themed Settings Window for the Game Overlay HUD plugin.

@@ -7,7 +7,7 @@ using DeckX.Core.Models;
 using DeckX.Core.Plugins;
 using SkiaSharp;
 
-namespace DeckX.Plugin.CanvasSampleTemplate;
+namespace DX8K.Plugin.CanvasSampleTemplate;
 
 /// <summary>
 /// Reference-grade Canvas Plugin Template for DeckX Control Studio.
@@ -26,8 +26,8 @@ public class CanvasSamplePlugin : IDeckXCanvasPlugin, IDisposable
     // =========================================================================
     // 1. Plugin Identification & Metadata
     // =========================================================================
-    public string Id => "com.deckx.canvas.sampletemplate";
-    public string Name => "DeckX Canvas Plugin Template";
+    public string Id => "com.dx8k.canvas.sampletemplate";
+    public string Name => "DX8K Canvas Plugin Template";
     public string Author => "DeckX Developer";
     public string Version => "1.0.0";
     public string Description => "Reference developer template for creating full-screen 480x272 interactive canvas dashboards.";

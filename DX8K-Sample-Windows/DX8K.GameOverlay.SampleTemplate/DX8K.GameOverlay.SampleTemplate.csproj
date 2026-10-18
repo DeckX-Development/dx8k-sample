@@ -35,11 +35,11 @@
       <StagingDir>$(ProjectDir)bin\staging\</StagingDir>
       <OutputDir Condition="Exists('$(ProjectDir)..\..\releases\')">$(ProjectDir)..\..\releases\</OutputDir>
       <OutputDir Condition="!Exists('$(ProjectDir)..\..\releases\')">$(ProjectDir)releases\</OutputDir>
-      <PackageOutputFile>$(OutputDir)SampleGameOverlay.deckxoverlay</PackageOutputFile>
-      <AppDataOverlayDir>$(AppData)\DeckX\devices\control_pad\dx8k\game_overlays\com.deckx.sample.gameoverlay\</AppDataOverlayDir>
+      <PackageOutputFile>$(OutputDir)DX8K.GameOverlay.SampleTemplate.deckxoverlay</PackageOutputFile>
+      <AppDataOverlayDir>$(AppData)\DeckX\devices\control_pad\dx8k\game_overlays\com.dx8k.sample.gameoverlay\</AppDataOverlayDir>
     </PropertyGroup>
 
-    <Message Importance="high" Text="=== [DeckX Auto-Packer] Packaging SampleGameOverlay.deckxoverlay DLL... ===" />
+    <Message Importance="high" Text="=== [DeckX Auto-Packer] Packaging DX8K.GameOverlay.SampleTemplate.deckxoverlay DLL... ===" />
 
     <!-- 1. Clean staging directory -->
     <RemoveDir Directories="$(StagingDir)" />

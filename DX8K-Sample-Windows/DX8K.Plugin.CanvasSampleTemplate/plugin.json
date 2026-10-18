@@ -1,6 +1,6 @@
 {
-  "id": "com.deckx.canvas.sampletemplate",
-  "name": "DeckX Canvas Plugin Template",
+  "id": "com.dx8k.canvas.sampletemplate",
+  "name": "DX8K Canvas Plugin Template",
   "version": "1.0.0",
   "author": "DeckX Developer",
   "description": "Reference developer template for creating full-screen 480x272 interactive canvas dashboards for DeckX Control Studio.",
@@ -8,7 +8,7 @@
   "categoryIcon": "M3 3h18v18H3V3zm16 16V5H5v14h14zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z",
   "targetDevice": "DX8K",
   "supportedDevices": [ "DX8K" ],
-  "assembly": "DeckX.Plugin.CanvasSampleTemplate.dll",
+  "assembly": "DX8K.Plugin.CanvasSampleTemplate.dll",
   "isCanvasPlugin": true,
   "actions": [
     {

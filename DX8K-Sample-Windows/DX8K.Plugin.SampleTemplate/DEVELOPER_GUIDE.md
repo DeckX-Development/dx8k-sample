@@ -2,7 +2,7 @@
 
 > **Target Platform:** DeckX Control Studio (.NET 8 / Avalonia UI / DX8K Hardware Deck)  
 > **Package / Library:** `DeckX.Core` (v1.1.1+)  
-> **Template:** `DeckX.Plugin.SampleTemplate`  
+> **Template:** `DX8K.Plugin.SampleTemplate`  
 > **Target Device:** DX8K (8-Key Physical Macro Deck with LCD & Rotary Encoders)
 
 ---
@@ -61,7 +61,7 @@ Plugins in DeckX are **dynamically loaded .NET 8 assemblies** that allow third-p
    └───────────────────────────┼────────────────────────────┘
                                │ In-Process Assembly Boundary
    ┌───────────────────────────▼────────────────────────────┐
-   │             DeckX.Plugin.SampleTemplate                │
+   │              DX8K.Plugin.SampleTemplate                │
    │            (Your Custom Plugin Assembly)               │
    │                                                        │
    │  • OnInitialize()          • OnActionTriggeredAsync()  │
@@ -102,14 +102,14 @@ sequenceDiagram
 ## 3. Project Structure Anatomy
 
 ```
-DeckX.Plugin.SampleTemplate/
+DX8K.Plugin.SampleTemplate/
 │
-├── DeckX.Plugin.SampleTemplate.csproj   # MSBuild SDK project with integrated auto-packer
+├── DX8K.Plugin.SampleTemplate.csproj    # MSBuild SDK project with integrated auto-packer
 ├── plugin.json                          # Plugin manifest, action declarations, and default layout
 ├── SamplePlugin.cs                      # Core C# logic implementing IDeckXPlugin
 ├── README.md                            # Quick-start summary
 ├── DEVELOPER_GUIDE.md                   # This deep-dive architecture document
-├── DeckX_Plugin_Developer_Guide.pdf     # Graphical reference guide
+├── DX8K_Plugin_Developer_Guide.pdf      # Graphical reference guide
 └── assets/                              # (Optional) External assets, images, or bundled dependencies
 ```
 
@@ -154,11 +154,11 @@ The `.csproj` contains a custom MSBuild Target that triggers automatically after
 2. **Copies** `plugin.json`, the compiled plugin `.dll`, and debug `.pdb`.
 3. **Zips** the staging directory into a distribution package with the `.deckxplugin` extension:
    ```
-   releases/DeckX.Plugin.SampleTemplate.deckxplugin
+   releases/DX8K.Plugin.SampleTemplate.deckxplugin
    ```
 4. **Installs for Live Testing:** It copies the plugin directly into:
    ```
-   %APPDATA%\DeckX\Plugins\com.deckx.sampletemplate\
+   %APPDATA%\DeckX\Plugins\com.dx8k.sampletemplate\
    ```
    This means whenever you compile in your IDE, the latest version of your plugin is immediately ready for DeckX Control Studio without manual copying.
 
@@ -170,15 +170,15 @@ The manifest file is the entry point that DeckX Control Studio parses to registe
 
 ```json
 {
-  "id": "com.deckx.sampletemplate",
-  "name": "DeckX Button Plugin Template",
+  "id": "com.dx8k.sampletemplate",
+  "name": "DX8K Button Plugin Template",
   "version": "1.0.0",
   "author": "DeckX Developer",
   "description": "Sample reference template for creating custom C# button plugins...",
-  "category": "Sample Template (Plugin)",
+  "category": "Button Plugin Template",
   "targetDevice": "DX8K",
   "supportedDevices": [ "DX8K" ],
-  "assembly": "DeckX.Plugin.SampleTemplate.dll",
+  "assembly": "DX8K.Plugin.SampleTemplate.dll",
   "actions": [ ... ],
   "defaultPage": { ... }
 }
@@ -198,7 +198,7 @@ The manifest file is the entry point that DeckX Control Studio parses to registe
   "title": "STATE: ON",
   "actionType": "Plugin: Power Toggle",
   "pluginActionId": "sample.toggle_power",
-  "pluginId": "com.deckx.sampletemplate",
+  "pluginId": "com.dx8k.sampletemplate",
   "hasAction": true,
   "showTitle": true,
   "iconSize": 50,
@@ -414,14 +414,14 @@ private void UpdatePowerKey(DeckKeyActionContext ctx)
 ## 9. Step-by-Step: Building Your Own Custom Plugin
 
 ### Step 1: Copy and Rename the Project
-1. Copy the `DeckX.Plugin.SampleTemplate` directory to `DeckX.Plugin.MyFeature`.
-2. Rename `DeckX.Plugin.SampleTemplate.csproj` to `DeckX.Plugin.MyFeature.csproj`.
+1. Copy the `DX8K.Plugin.SampleTemplate` directory to `DX8K.Plugin.MyFeature`.
+2. Rename `DX8K.Plugin.SampleTemplate.csproj` to `DX8K.Plugin.MyFeature.csproj`.
 
 ### Step 2: Configure `plugin.json`
 Update:
 - `"id"`: `"com.myusername.myfeature"`
 - `"name"`: `"My Custom Feature"`
-- `"assembly"`: `"DeckX.Plugin.MyFeature.dll"`
+- `"assembly"`: `"DX8K.Plugin.MyFeature.dll"`
 - Define your custom actions under `"actions"`.
 
 ### Step 3: Implement Your Actions in C#

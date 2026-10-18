@@ -28,10 +28,10 @@ Welcome to the **DeckX Button Plugin Template**! This template provides a comple
 ## 📁 Project Structure
 
 ```
-DeckX.Plugin.SampleTemplate/
+DX8K.Plugin.SampleTemplate/
 ├── libs/
 │   └── DeckX.Core.dll                   # DeckX plugin interfaces & data contracts
-├── DeckX.Plugin.SampleTemplate.csproj   # MSBuild project file with Auto-Packer
+├── DX8K.Plugin.SampleTemplate.csproj    # MSBuild project file with Auto-Packer
 ├── plugin.json                          # Plugin manifest & default 8-key layout
 ├── SamplePlugin.cs                      # Main C# plugin implementation
 └── README.md                            # Developer documentation
@@ -42,14 +42,14 @@ DeckX.Plugin.SampleTemplate/
 ## 🛠️ Step-by-Step: How to Create Your Own Plugin
 
 ### Step 1: Copy or Rename the Project
-1. Copy the `DeckX.Plugin.SampleTemplate` folder and give it your desired plugin name (e.g., `DeckX.Plugin.Twitch` or `DeckX.Plugin.SmartHome`).
+1. Copy the `DX8K.Plugin.SampleTemplate` folder and give it your desired plugin name (e.g., `DX8K.Plugin.Twitch` or `DX8K.Plugin.SmartHome`).
 2. Rename the `.csproj` file to match your plugin name.
 
 ### Step 2: Edit `plugin.json`
 Open `plugin.json` and change the following:
 - **`id`**: Unique identifier for your plugin in reverse-DNS format (e.g. `com.yourname.smartlights`).
 - **`name`**: Friendly name shown in DeckX Control Studio.
-- **`assembly`**: Name of the compiled DLL output (e.g. `DeckX.Plugin.SmartHome.dll`).
+- **`assembly`**: Name of the compiled DLL output (e.g. `DX8K.Plugin.SmartHome.dll`).
 - **`actions`**: Define the list of action buttons your plugin exposes to the DeckX left sidebar.
 - **`defaultPage`**: Configure the initial 8-button layout, background colors, and white custom borders (`hasCustomBorder: true`, `customBorderColorHex: "#FFFFFF"`, `customBorderWidth: 1.5`).
 
@@ -57,7 +57,7 @@ Open `plugin.json` and change the following:
 Implement your desired business logic inside `SamplePlugin.cs`:
 1. **Change Class & Namespace**:
    ```csharp
-   namespace DeckX.Plugin.MyService;
+   namespace DX8K.Plugin.MyService;
    public class MyPlugin : IDeckXPlugin
    ```
 2. **Handle Button Presses**:

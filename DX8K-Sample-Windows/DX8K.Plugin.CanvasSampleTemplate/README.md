@@ -36,8 +36,8 @@ Unlike traditional 8-button plugins which fit into predefined button grids, a **
 ## 3. Project Structure
 
 ```
-DeckX.Plugin.CanvasSampleTemplate/
-├── DeckX.Plugin.CanvasSampleTemplate.csproj   # MSBuild project with auto-packager
+DX8K.Plugin.CanvasSampleTemplate/
+├── DX8K.Plugin.CanvasSampleTemplate.csproj   # MSBuild project with auto-packager
 ├── plugin.json                               # Plugin manifest with "isCanvasPlugin": true
 ├── CanvasSamplePlugin.cs                     # Core reference implementation (IDeckXCanvasPlugin)
 └── README.md                                 # Developer guide & reference
