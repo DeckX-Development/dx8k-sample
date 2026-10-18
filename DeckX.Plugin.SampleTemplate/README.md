@@ -5,6 +5,9 @@
 
 Welcome to the **DeckX Button Plugin Template**! This template provides a complete, production-ready starting point for developers who want to build their own custom plugins for DeckX Control Studio.
 
+> 📖 **Looking for a deep-dive architecture and API breakdown?**  
+> Check out the [**Comprehensive Developer Guide (DEVELOPER_GUIDE.md)**](./DEVELOPER_GUIDE.md).
+
 ---
 
 ## 🚀 What This Sample Demonstrates
