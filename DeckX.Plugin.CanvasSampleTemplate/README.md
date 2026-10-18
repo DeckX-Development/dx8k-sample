@@ -2,7 +2,7 @@
 
 **Version:** 1.0.0  
 **Target Framework:** .NET 8.0  
-**Target Hardware:** DeckX DX8K 8Key Control Pad (480x272 4.3" Capacitive Touch Display / ESP32-S3)  
+**Target Hardware:** DeckX DX8K 8-Key Control Pad (480x272 4.3" Capacitive Touch Display)  
 **Author:** Nactro Development Team  
 
 ---

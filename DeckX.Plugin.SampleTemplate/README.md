@@ -1,6 +1,6 @@
 # DeckX Control Studio — Button Plugin Developer Template
 **Version:** 1.0.0  
-**Target Platform:** DeckX Control Studio (.NET 8 / ESP32 Hardware)  
+**Target Platform:** DeckX Control Studio (.NET 8 / DX8K Hardware)  
 **Author:** Nactro Development Team  
 
 Welcome to the **DeckX Button Plugin Template**! This template provides a complete, production-ready starting point for developers who want to build their own custom plugins for DeckX Control Studio.
@@ -90,7 +90,7 @@ Implement your desired business logic inside `SamplePlugin.cs`:
 ## ⚡ Performance Best Practices
 
 1. **Never Block the UI Thread**:
-   When a physical button is pressed on the ESP32, DeckX calls `OnActionTriggeredAsync`. Never call synchronous `Thread.Sleep()`, synchronous HTTP requests, or `Process.WaitForExit()` directly on the calling thread. Always offload them:
+   When a physical button is pressed on the DX8K hardware deck, DeckX calls `OnActionTriggeredAsync`. Never call synchronous `Thread.Sleep()`, synchronous HTTP requests, or `Process.WaitForExit()` directly on the calling thread. Always offload them:
    ```csharp
    _ = Task.Run(async () =>
    {

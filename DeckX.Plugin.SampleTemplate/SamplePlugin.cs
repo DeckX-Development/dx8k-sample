@@ -195,7 +195,7 @@ public class SamplePlugin : IDeckXPlugin
 
     // =========================================================================
     // 6. Action Execution Handler
-    // Triggered when a physical key on the ESP32 or software button is pressed
+    // Triggered when a physical key on the hardware deck or software button is pressed
     // CRITICAL: Heavy tasks (processes, web calls, hotkeys) must run via Task.Run
     // so the Avalonia UI Thread is NEVER blocked!
     // =========================================================================

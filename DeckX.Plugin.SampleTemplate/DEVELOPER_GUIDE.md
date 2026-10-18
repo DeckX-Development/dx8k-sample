@@ -1,6 +1,6 @@
 # DeckX Button Plugin Architecture & Developer Deep Dive
 
-> **Target Platform:** DeckX Control Studio (.NET 8 / Avalonia UI / ESP32 Hardware Deck)  
+> **Target Platform:** DeckX Control Studio (.NET 8 / Avalonia UI / DX8K Hardware Deck)  
 > **Package / Library:** `DeckX.Core` (v1.1.1+)  
 > **Template:** `DeckX.Plugin.SampleTemplate`  
 > **Target Device:** DX8K (8-Key Physical Macro Deck with LCD & Rotary Encoders)
@@ -31,7 +31,7 @@
 
 ## 1. Overview & Architectural Philosophy
 
-The **DeckX Control Studio** is a modular desktop application designed to communicate with external hardware decks (such as the DX8K, powered by ESP32 microcontrollers). 
+The **DeckX Control Studio** is a modular desktop application designed to communicate with external hardware decks (such as the DX8K Macro Deck). 
 
 Plugins in DeckX are **dynamically loaded .NET 8 assemblies** that allow third-party developers to extend the deck's capabilities. A button plugin can:
 - Listen for physical key presses from the hardware deck.
@@ -80,7 +80,7 @@ When an action occurs, the communication traverses several layers:
 sequenceDiagram
     autonumber
     actor User as User (Physical Deck)
-    participant HW as DX8K Hardware (ESP32)
+    participant HW as DX8K Hardware Deck
     participant Host as DeckX Control Studio
     participant Plugin as SamplePlugin
     participant OS as OS / External Service

@@ -10,7 +10,7 @@ namespace DeckX.GameOverlay.SampleTemplate;
 
 /// <summary>
 /// Sample Game Monitoring & Telemetry HUD DLL Plugin.
-/// Implements IDeckXGameOverlay with pixel-perfect DeckX Control Pad ESP32 LVGL HUD rendering,
+/// Implements IDeckXGameOverlay with pixel-perfect DeckX Control Pad hardware HUD rendering,
 /// full color customization, hardware sensor overrides, and integrated settings dialog.
 /// </summary>
 public class SampleGameOverlay : IDeckXGameOverlay
@@ -112,7 +112,7 @@ public class SampleGameOverlay : IDeckXGameOverlay
     }
 
     /// <summary>
-    /// Renders the pixel-perfect 480x272 DeckX Control Pad ESP32 LVGL hardware HUD.
+    /// Renders the pixel-perfect 480x272 DeckX Control Pad hardware HUD.
     /// </summary>
     public void RenderOverlay(SKCanvas canvas, int width, int height, GameOverlayTelemetryData telemetry)
     {
