@@ -13,6 +13,9 @@ The **DeckX Canvas Plugin Template** is a complete, reference-grade starting poi
 
 Unlike traditional 8-button plugins which fit into predefined button grids, a **Canvas Plugin** turns the entire DeckX screen into a customizable display surface. You have pixel-level control using **SkiaSharp** to draw cards, gauges, charts, custom icons, and media controls, and you receive raw capacitive touch coordinates directly from the hardware screen.
 
+> 📖 **Looking for a deep-dive architecture, SkiaSharp rendering, and touch hit-testing breakdown?**  
+> Check out the [**Comprehensive Developer Guide (DEVELOPER_GUIDE.md)**](./DEVELOPER_GUIDE.md).
+
 ---
 
 ## 2. Key Capabilities Demonstrated
