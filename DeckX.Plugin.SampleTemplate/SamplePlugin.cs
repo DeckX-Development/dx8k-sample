@@ -45,7 +45,7 @@ public class SamplePlugin : IDeckXPlugin
     public string Description => "Sample reference template for creating customizable button plugins for DeckX Control Studio.";
     public string Version => "1.0.0";
     public string Author => "DeckX Developer";
-    public string Category => "Sample Template (Plugin)";
+    public string Category => "Button Plugin Template";
     public string CategoryIconGeometry => PluginCategoryIcon;
     public string? IconGeometry => PluginCategoryIcon;
 

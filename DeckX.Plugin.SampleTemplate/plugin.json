@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "DeckX Developer",
   "description": "A clean, reference-grade sample template for creating custom C# button plugins with live two-way updates, animations, and hardware LCD synchronization.",
-  "category": "Sample Template (Plugin)",
+  "category": "Button Plugin Template",
   "targetDevice": "DX8K",
   "supportedDevices": [ "DX8K" ],
   "assembly": "DeckX.Plugin.SampleTemplate.dll",

@@ -8,12 +8,12 @@ This repository contains ready-to-use template projects and developer guides for
 
 ## 📦 Included Templates
 
-| Template | Description |
-| :--- | :--- |
-| [**DeckX.Plugin.SampleTemplate**](./DeckX.Plugin.SampleTemplate) | Standard button/macro plugin template demonstrating key actions, state toggles, and hardware integration. |
-| [**DeckX.Plugin.CanvasSampleTemplate**](./DeckX.Plugin.CanvasSampleTemplate) | Full-canvas rendering plugin template for rich custom UI and continuous graphics updates. |
-| [**DeckX.ClockFace.SampleTemplate**](./DeckX.ClockFace.SampleTemplate) | Custom clock face template for DeckX standby and clock modes. |
-| [**DeckX.GameOverlay.SampleTemplate**](./DeckX.GameOverlay.SampleTemplate) | In-game HUD / telemetry overlay template for DeckX. |
+| Template | Type | Description |
+| :--- | :--- | :--- |
+| [**DeckX.Plugin.SampleTemplate**](./DeckX.Plugin.SampleTemplate) | 🔲 **Button Plugin** | 8-Key hardware button plugin template demonstrating dynamic button actions, two-way state toggles, click counters, custom borders, and live telemetry tickers. |
+| [**DeckX.Plugin.CanvasSampleTemplate**](./DeckX.Plugin.CanvasSampleTemplate) | 🎨 **Canvas Plugin** | Full-canvas (480x272) rendering plugin template for rich custom UI, graphics, and capacitive touch controls. |
+| [**DeckX.ClockFace.SampleTemplate**](./DeckX.ClockFace.SampleTemplate) | ⏰ **Clock Face** | Custom standby/active digital & analog clock face template for DeckX. |
+| [**DeckX.GameOverlay.SampleTemplate**](./DeckX.GameOverlay.SampleTemplate) | 🎮 **Game Overlay** | Full-screen in-game monitoring and hardware telemetry HUD overlay template. |
 
 ---
 
